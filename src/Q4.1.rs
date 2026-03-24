@@ -1,19 +1,23 @@
 fn main() {
     let start = 0;
-    let end = 12;
+    let end = 45;
 
     for i in start..=end {
-        if i <= 3{
-            println!("{}",i);
+        if i <= 1{
+            continue;
         }
-        else if i%2 != 0 | i%3 != 0 | i%5 != 0 | i%7 != 0{
-            println!("{}",i);
-        }
-        else if i<10 {
-            if i == 7 {
-                println!("7");
+        let mut is_prime =true;
+        let limit = (i as f64).sqrt() as i32;
+
+        for f in 2..=limit {
+            if i%f == 0{
+                is_prime = false;
+                break;
             }
-            else if i==5{println!("5")};
         }
+        
+    if is_prime {
+        println!("{}",i);
+            }
+        }   
     }
-}
